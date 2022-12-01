@@ -4,12 +4,10 @@ import com.example.springhibernateappv1.dao.PersonDAO;
 import com.example.springhibernateappv1.models.Person;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
-
 
 @Controller
 @RequiredArgsConstructor

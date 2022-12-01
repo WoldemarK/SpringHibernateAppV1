@@ -1,6 +1,7 @@
 package com.example.springhibernateappv1.models;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotEmpty;
 import jakarta.validation.constraints.Size;
@@ -23,13 +24,19 @@ public class Person {
     @Column(name = "age")
     private int age;
 
+    @Email
+    @Column(name = "email")
+    @NotEmpty(message = "Email should be empty ")
+    private String email;
+
     public Person() {
 
     }
 
-    public Person(String name, int age) {
+    public Person(String name, int age, String email) {
         this.name = name;
         this.age = age;
+        this.email = email;
     }
 
     public int getId() {
@@ -56,12 +63,21 @@ public class Person {
         this.age = age;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", age=" + age +
+                ", email='" + email + '\'' +
                 '}';
     }
 }
